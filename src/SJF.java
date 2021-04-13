@@ -34,23 +34,23 @@ public class SJF {
 
             //simulate running active process
             while (!q_SJF.isEmpty()) {
-                System.out.println("Active processes: " + activeProcesses.size());
+                //System.out.println("Active processes: " + activeProcesses.size());
                 Process chosen = q_SJF.peek(); //chosen process @head of SJF queue
-                System.out.println( "t: "+ t);
-                System.out.println( "(Running process with total CPU time: "+ chosen.getTotCPUTime()+")\n");
+                //System.out.println( "t: "+ t);
+                //System.out.println( "(Running process with total CPU time: "+ chosen.getTotCPUTime()+")\n");
                 int remTemp = chosen.getRemCPUTime(); //get remaining CPU time
                 int decRemTemp = remTemp - 1; //decrement remaining time
                 chosen.setRemCPUTime(decRemTemp); //update remaining time
-                System.out.println("Remaining time: " + chosen.getRemCPUTime());
+                //System.out.println("Remaining time: " + chosen.getRemCPUTime());
 
                 //if process has completed
                 if (chosen.getRemCPUTime() == 0) {
                     counter++;
                     t++; //increment time
                     turnaround = t - chosen.getArrivalTime(); //current time - arrival time
-                    System.out.println("endtime: " + t);
+                    //System.out.println("endtime: " + t);
                     chosen.setActive(0); //process no longer active
-                    System.out.println("Turnaround time: " + turnaround);
+                    //System.out.println("Turnaround time: " + turnaround);
                     turnTimes.add(turnaround);
                     q_SJF.poll(); //remove completed process from SJF queue
                     processes.remove(chosen); //remove chosen from process list
@@ -80,8 +80,8 @@ public class SJF {
             sum+=turnTime;
         }
         ATT=(float) sum/ (float) counter;
-        System.out.println("Average turnaround time for SJF: " + String.format("%.2f",ATT));
-        System.out.println("\n"+counter+" processes completed");
+        System.out.println(/*"Average turnaround time for SJF: " +*/ String.format("%.2f",ATT));
+        //System.out.println("\n"+counter+" processes completed");
     }
 
     //non pre-emptive

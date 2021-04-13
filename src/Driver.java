@@ -6,6 +6,7 @@ import java.util.Random;
 
 public class Driver
 {
+    private static int numRuns = 1000;
     private static int seed = 156438;
     private static int[] seeds = new int[1000];
     public static ArrayList createProcesses(int k, int n, int d ,int seed)
@@ -41,7 +42,6 @@ public class Driver
 
     public static void testFIFO(int k ,int n, int d)
     {
-        int numRuns = 3;
         for(int j = 0; j < numRuns; j++)
         {
             ArrayList<Process> testSet = createProcesses(k,n,d, seeds[j]);
@@ -52,7 +52,6 @@ public class Driver
 
     public static void testSJF(int k ,int n, int d)
     {
-        int numRuns = 3;
         for(int j = 0; j < numRuns; j++)
         {
             ArrayList<Process> testSet = createProcesses(k,n,d, seeds[j]);
@@ -63,7 +62,6 @@ public class Driver
 
     public static void testSRT(int k ,int n, int d)
     {
-        int numRuns = 3;
         for(int j = 0; j < numRuns; j++)
         {
             ArrayList<Process> testSet = createProcesses(k,n,d, seeds[j]);

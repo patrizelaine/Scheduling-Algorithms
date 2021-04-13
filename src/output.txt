@@ -1,0 +1,51 @@
+The current time is: 0 ms
+Currently running process 0
+the current remaining time is: 5
+
+The current time is: 1 ms
+Currently running process 1
+the current remaining time is: 3
+
+The current time is: 2 ms
+Currently running process 2
+the current remaining time is: 1
+
+The current time is: 3 ms
+Currently running process 2
+the current remaining time is: 0
+
+The current time is: 4 ms
+Currently running process 1
+the current remaining time is: 2
+
+The current time is: 5 ms
+Currently running process 1
+the current remaining time is: 1
+
+The current time is: 6 ms
+Currently running process 1
+the current remaining time is: 0
+
+The current time is: 7 ms
+Currently running process 0
+the current remaining time is: 4
+
+The current time is: 8 ms
+Currently running process 0
+the current remaining time is: 3
+
+The current time is: 9 ms
+Currently running process 0
+the current remaining time is: 2
+
+The current time is: 10 ms
+Currently running process 0
+the current remaining time is: 1
+
+The current time is: 11 ms
+Currently running process 0
+the current remaining time is: 0
+
+
+SRT AVERAGE TURNAROUND TIME:
+The average turnaround time is: 6

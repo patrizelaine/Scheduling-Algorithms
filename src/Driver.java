@@ -162,7 +162,7 @@ public class Driver
         System.out.println("&&SJF&&");
         testSJF(250,1500,300);
         System.out.println("&&SRT&&");
-        testSRT(50000,1500,2);
+        testSRT(250,1500,300);
         
         
 

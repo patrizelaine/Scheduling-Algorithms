@@ -109,7 +109,7 @@ public class Driver
         testSRT(90500,5000,3);
 
                 
-        // HYPOTHESIS CASE 2: requency of process arrivals are less than average total CPU time
+        // HYPOTHESIS CASE 2: frequency of process arrivals are less than average total CPU time
         System.out.println("HYPOTHESIS CASE 2: K/N < D");
         
         // (k/n) = 10
@@ -135,6 +135,36 @@ public class Driver
         testSJF(50000,1500,2);
         System.out.println("&&SRT&&");
         testSRT(50000,1500,2);
+
+        
+        // HYPOTHESIS CASE 3: convoy effect
+        System.out.println("HYPOTHESIS CASE 2: K/N < D");
+        
+        // (k/n) = 10
+        System.out.println("&&FIFO&&");
+        testFIFO(10,100,30);
+        System.out.println("&&SJF&&");
+        testSJF(10,100,30);
+        System.out.println("&&SRT&&");
+        testSRT(10,100,30);
+        
+        // (k/n) = 25
+        System.out.println("&&FIFO&&");
+        testFIFO(50,1000,100);
+        System.out.println("&&SJF&&");
+        testSJF(50,1000,100);
+        System.out.println("&&SRT&&");
+        testSRT(50,1000,100);
+        
+        // (k/n) = 33.33
+        System.out.println("&&FIFO&&");
+        testFIFO(250,1500,300);
+        System.out.println("&&SJF&&");
+        testSJF(250,1500,300);
+        System.out.println("&&SRT&&");
+        testSRT(250,1500,300);
+        
+        
 
 
     }

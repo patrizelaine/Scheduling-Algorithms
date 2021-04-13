@@ -83,33 +83,60 @@ public class Driver
 
         /****TEST SETS*****/
 
-        /****frequency of process arrivals are greater than average total CPU time****/
-//        //set 1:
-//        // (k/n) = 35
-//        ArrayList<Process> test1 = createProcesses(35000,1000,15);
-//        ArrayList<Process> test2 = createProcesses(35000,1000,15);
-//        ArrayList<Process> test3 = createProcesses(35000,1000,15);
-//
+        // HYPOTHESIS CASE 1: frequency of process arrivals are greater than average total CPU time
+        System.out.println("HYPOTHESIS CASE 1: K/N > D");
+     
+        // (k/n) = 35
         System.out.println("&&FIFO&&");
         testFIFO(35000,1000,15);
         System.out.println("&&SJF&&");
         testSJF(35000,1000,15);
         System.out.println("&&SRT&&");
         testSRT(35000,1000,15);
-//
-//        //set 2:
-//        // (k/n) = 30
-//        ArrayList<Process> test4 = createProcesses(45000,1500,10);
-//        ArrayList<Process> test5 = createProcesses(45000,1500,10);
-//        ArrayList<Process> test6 = createProcesses(45000,1500,10);
-//
-//        //set 3:
-//        // (k/n) = 18.1
-//        ArrayList<Process> test7 = createProcesses(90500,5000,3);
-//        ArrayList<Process> test8 = createProcesses(45000,1500,3);
-//        ArrayList<Process> test9 = createProcesses(45000,1500,3);
 
+        // (k/n) = 30
+        System.out.println("&&FIFO&&");
+        testFIFO(45000,1500,10);
+        System.out.println("&&SJF&&");
+        testSJF(45000,1500,10);
+        System.out.println("&&SRT&&");
+        testSRT(45000,1500,10);
+        
+        // (k/n) = 18.1
+        System.out.println("&&FIFO&&");
+        testFIFO(90500,5000,3);
+        System.out.println("&&SJF&&");
+        testSJF(90500,5000,3);
+        System.out.println("&&SRT&&");
+        testSRT(90500,5000,3);
 
+                
+        // HYPOTHESIS CASE 2: requency of process arrivals are less than average total CPU time
+        System.out.println("HYPOTHESIS CASE 2: K/N < D");
+        
+        // (k/n) = 10
+        System.out.println("&&FIFO&&");
+        testFIFO(1000,100,15);
+        System.out.println("&&SJF&&");
+        testSJF(1000,100,15);
+        System.out.println("&&SRT&&");
+        testSRT(1000,100,15);
+        
+        // (k/n) = 25
+        System.out.println("&&FIFO&&");
+        testFIFO(25000,1000,50);
+        System.out.println("&&SJF&&");
+        testSJF(25000,1000,50);
+        System.out.println("&&SRT&&");
+        testSRT(25000,1000,50);
+        
+        // (k/n) = 33.33
+        System.out.println("&&FIFO&&");
+        testFIFO(50000,1500,50);
+        System.out.println("&&SJF&&");
+        testSJF(50000,1500,50);
+        System.out.println("&&SRT&&");
+        testSRT(50000,1500,50);
 
 
     }

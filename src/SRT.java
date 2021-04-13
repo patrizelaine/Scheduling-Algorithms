@@ -78,6 +78,6 @@ public class SRT {
     	    ATT += processes.get(y).getTurnAround();
     	}
     	ATT = ATT/processes.size();
-    	System.out.println("SRT ATT IS: " + ATT);
+    	System.out.println(/*"SRT ATT IS: "*/ + ATT);
     }
 }

@@ -130,11 +130,11 @@ public class Driver
         
         // (k/n) = 33.33
         System.out.println("&&FIFO&&");
-        testFIFO(50000,1500,50);
+        testFIFO(50000,1500,2);
         System.out.println("&&SJF&&");
-        testSJF(50000,1500,50);
+        testSJF(50000,1500,2);
         System.out.println("&&SRT&&");
-        testSRT(50000,1500,50);
+        testSRT(50000,1500,2);
 
 
     }

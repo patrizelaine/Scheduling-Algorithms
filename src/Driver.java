@@ -138,7 +138,7 @@ public class Driver
 
         
         // HYPOTHESIS CASE 3: convoy effect
-        System.out.println("HYPOTHESIS CASE 2: K/N < D");
+        System.out.println("HYPOTHESIS CASE 3: CONVOY");
         
         // (k/n) = 10
         System.out.println("&&FIFO&&");
@@ -162,7 +162,7 @@ public class Driver
         System.out.println("&&SJF&&");
         testSJF(250,1500,300);
         System.out.println("&&SRT&&");
-        testSRT(250,1500,300);
+        testSRT(50000,1500,2);
         
         
 

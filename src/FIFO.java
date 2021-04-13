@@ -31,20 +31,20 @@ public class FIFO
         {
             scheduledProcesses.add(p);
         }
-        System.out.println("number of processes to be scheduled: " + scheduledProcesses.size());
+        //System.out.println("number of processes to be scheduled: " + scheduledProcesses.size());
 
         while(!scheduledProcesses.isEmpty())
         {
             Process p = scheduledProcesses.peek();//copy next process in queue
-            System.out.println("Current time: " + t +
-                    "\nTotal CPU time: " + p.getTotCPUTime() +
-                    "\nArrival time: " + p.getArrivalTime() +
-                    "\nActive status: " + p.getActive());
+//            System.out.println("Current time: " + t +
+//                    "\nTotal CPU time: " + p.getTotCPUTime() +
+//                    "\nArrival time: " + p.getArrivalTime() +
+//                    "\nActive status: " + p.getActive());
             //if current process's arrival time is greater than current time,
             //no active processes so increment current time (t)
             if(p.getArrivalTime() > t)
             {
-                System.out.println("@@@@There are no active processes@@@@");
+                //System.out.println("@@@@There are no active processes@@@@");
                 t++;
                 continue;
                 //break;
@@ -59,16 +59,16 @@ public class FIFO
             TT = t - p.getArrivalTime() + p.getTotCPUTime();
             //adding current process' turnaround time to list for average turn around time calculation
             TurnAroundTimes.add(TT);
-            System.out.println("Turn around time: " + TT);
+            //System.out.println("Turn around time: " + TT);
             //choose active process to run next
             if(p.getActive() == 1)
             {
-                System.out.println("*******choosing an active process*******");
+                //System.out.println("*******choosing an active process*******");
                 int RemCPUtime = p.getRemCPUTime();
                 while(p.getRemCPUTime() != 0)
                 {
-                    System.out.println("remaining CPU time: " + RemCPUtime);
-                    System.out.println("Current time: " + t);
+//                    System.out.println("remaining CPU time: " + RemCPUtime);
+//                    System.out.println("Current time: " + t);
                     //decrement remaining CPU time
                     RemCPUtime = RemCPUtime - 1;
                     p.setRemCPUTime(RemCPUtime);
@@ -82,7 +82,7 @@ public class FIFO
                     // set to not active
                     p.setActive(0);
                     // remove from list of processes to be scheduled
-                    System.out.println("#######removing " + scheduledProcesses.peek());
+                    //System.out.println("#######removing " + scheduledProcesses.peek());
                     scheduledProcesses.poll();
                     completedP++;
                 }
@@ -97,8 +97,8 @@ public class FIFO
                     total+=turntime;
                 }
                 ATT = (float) total/ (float) TurnAroundTimes.size();
-                System.out.println("Average turn around time for FIFO was: " + ATT);
-                System.out.println("# completed processes: " + completedP);
+                System.out.println(ATT);
+//                System.out.println("# completed processes: " + completedP);
             }
         }
     }

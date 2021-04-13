@@ -10,7 +10,7 @@ public class SRT {
 	
 	public void simulatesSRT()
     {
-    	int ATT = 0;
+    	float ATT = 0;
     	int completedProcesses = 0;
     	int currentTime = 0;
     	int shortestTime = Integer.MAX_VALUE;
@@ -26,12 +26,17 @@ public class SRT {
     		{
     			if((processes.get(i).getArrivalTime() <= currentTime) && (processes.get(i).getRemCPUTime() < shortestTime) && (processes.get(i).getRemCPUTime() > 0))
     			{
-    				if(processes.get(i).getActive()==0)
+    				//if process is not active
+    			    if(processes.get(i).getActive()==0)
     				{
+    				    //set the process to active
     					processes.get(i).setActive(1);
+    					//active time of process is the current time
     					activeTime[i] = currentTime;
     				}
+
     				shortestTime = processes.get(i).getRemCPUTime();
+                    //shortest time is the process we're currently at
     				shortestProcess = i;
     				checkProcess = true;
     			}
@@ -43,15 +48,11 @@ public class SRT {
     			continue;
     		}
     		
-    		// System.out.println("Currently running process " + shortestProcess);
-    		
     		currentRemainingTime = processes.get(shortestProcess).getRemCPUTime();
     		
     		// Decrements CPU time of the shortest process
     		currentRemainingTime--;
     		processes.get(shortestProcess).setRemCPUTime(currentRemainingTime);
-    		// System.out.println("the current remaining time is: " + processes.get(shortestProcess).getRemCPUTime() + "\n");
-    		
     		shortestTime = processes.get(shortestProcess).getRemCPUTime();
     		
     		// Once the shortest process is completed, update all values
@@ -64,15 +65,17 @@ public class SRT {
     		{
     			completedProcesses++;
     			checkProcess = false;
-    			processes.get(shortestProcess).setTurnAround(1+currentTime-activeTime[shortestProcess]);
+    			processes.get(shortestProcess).setTurnAround(1+currentTime-processes.get(shortestProcess).getArrivalTime());
     			processes.get(shortestProcess).setActive(0);
+    			currentTime++;
     		}
+    		else
     		currentTime++;
     	}
     	
     	for(int y=0; y<processes.size(); y++)
     	{
-    		ATT += processes.get(y).getTurnAround();
+    	    ATT += processes.get(y).getTurnAround();
     	}
     	ATT = ATT/processes.size();
     	System.out.println("SRT ATT IS: " + ATT);

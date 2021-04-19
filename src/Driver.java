@@ -15,7 +15,7 @@ public class Driver
         Random num = new Random(seed);
         int arrTime, totCPU;
         //making v 90% of d, results in CPU times being more spread out
-        int v = (int)0.9 * d;
+        int v = (int) (0.9 * d);
         for(int i = 0; i < n; i ++)
         {
             //
